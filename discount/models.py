@@ -25,7 +25,7 @@ class Discounts(models.Model):
     company = models.CharField('Компания', max_length=150)
 
     def __str__(self):
-        return self.product + " " + self.model + " " + f"{self.price}" + " " + f"{self.discount}"
+        return self.product + " " + self.brand + " " + self.model + " " + f"{self.price}" + " " + f"{self.discount}"
 
     class Meta:
         verbose_name = 'Скидка'

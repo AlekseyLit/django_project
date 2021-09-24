@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load get_discount %}
+{% block title %} Скидки и спецпредложения {% endblock %}
+{% block content %}
+    <main>
+        <p>{{message}}</p>
+        <form name="auth" action="/account/check_user" method="post">
+            {% csrf_token %}
+            <label for="auth-login"> Логин:</label>
+            <input type="text" id="auth-login" name="auth-login" placeholder="Введите логин" required>
+            <label for="auth-password"> Пароль:</label>
+            <input type="password" id="auth-password" name="auth-password" placeholder="Введите пароль" required>
+            <input type="submit" name="auth-button" value="Войти" >
+            <div><a href="login">Нет аккаунта?</a></div>
+        </form>
+    </main>
+{% endblock %}
