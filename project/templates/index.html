@@ -3,25 +3,18 @@
 {% block title %} Скидки и спецпредложения {% endblock %}
 {% block content %}
     <main>
-        <div class="main__row flex">
-            <div class="main__banner">
-                <p class= "main__banner__p">Всегда актуальная информация о скидках и спецпредложениях </p>
-                <img class= "main__banner__img" src="{% static 'media/sale_vitrina.jpg' %}" alt="logo" >
-            </div>
-            <div class="main__assortiment">
-                <ul class="main__assortiment__ul">
-                    <li class="assortiment__li">Одежда</li>
-                    <li class="assortiment__li">Обувь</li>
-                    <li class="assortiment__li">Электроника</li>
-                    <li class="assortiment__li">Бытовая техника</li>
-                    <li class="assortiment__li">Детские товары</li>
-                    <li class="assortiment__li">Товары для дома</li>
-                    <li class="assortiment__li">Автомобили</li>
-                    <li class="assortiment__li">Зоотовары</li>
-                    <li class="assortiment__li">Спортивные товары</li>
-                    <li class="assortiment__li">Мебель</li>
-                </ul>
-            </div>
+          <div class="main__row flex">
+                <p class= "heading">Всегда актуальная информация о скидках и спецпредложениях </p>
+                <div class="main__banner">
+                    <img class= "main__banner__img" src="{% static 'media/sale_vitrina.jpg' %}" alt="banner" >
+                </div>
+              <p class="main__p">Регистрируйтесь на нашем сайте и получайте дополнительные бонусы:</p>
+              <div class="main__button ">
+                <a href="/account/login">Зарегистрироваться на сайте</a>
+              </div>
         </div>
+
+
+
     </main>
 {% endblock %}

@@ -1,49 +1,89 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load get_discount %}
-{% block title %} Скидки и спецпредложения {% endblock %}
+{% block title %} Cпецпредложения {% endblock %}
 {% block content %}
     <main>
-        <form id="myForm" action = "/offers" enctype="multipart/form-data" method ="POST" accept-charset="utf8mb4">
-            {% csrf_token %}
-            <div class="input-line">
-                <p style="color:white">Категория</p>
-                <select name="category" size="1">
-                    {% for cat in categories %}
-                        <option value="{{ cat.name }}">{{ cat.name }}</option>
-                    {% endfor %}
-               </select>
+        <p class="heading" > Спецпредложения</p>
+        <div class="main__categories flex ">
+
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/clothes2.jpg' %}" alt="card">
+                <p>одежда</p>
             </div>
-            <div class="input-line" style="margin-bottom:5%;">
-                <button type="submit" id ="submit" value="send">Отправить</button>
+            <div class="main__card flex">
+                <img class="main__card__foto" src="{% static 'media/auto2.jpg' %}"  alt="card">
+                <p>автомобили</p>
             </div>
-        </form>
-        <div class="main__row flex">
-                <div class="main__assortiment">
-                    {% if list %}
-                    <table>
-                        <b>
-                            <tr>
-                                <td colspan="3">Информация по выбранной категории товара:</td>
-                            </tr>
-                            <tr>
-                                <td>Компания</td>
-                                <td>Предложение</td>
-                                <td>Категория</td>
-                            </tr>
-                        </b>
-                        {% for offer in list %}
-                            <tr>
-                                <td>{{ offer.company }}</td>
-                                <td>{{ offer.offer }}</td>
-                                <td>{{ offer.category_id }}</td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                    {% else %}
-                        <p>Выберите категорию товара</p>
-                    {% endif %}
-                </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/home2.jpg' %}" alt="card">
+                <p>товары для дома</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/zoo2.jpg' %}" alt="card">
+                <p>зоотовары</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/sport2.jpg' %}" alt="card">
+                <p>спортивные товары</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/byt2.jpg' %}"  alt="card">
+                <p>бытовая техника</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/electronika2.jpg' %}" alt="card">
+                <p>электроника</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/child.jpg' %}" alt="card">
+                <p>детские товары</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/mebel2.jpg' %}" alt="card">
+                <p>мебель</p>
+            </div>
+            <div class="main__card flex">
+                <img class="main__card__foto" src ="{% static 'media/shoes2.jpg' %}" alt="card">
+                <p>обувь</p>
+            </div>
+
         </div>
+            <form class="form__discounts flex" action = "/offers" enctype="multipart/form-data" method ="POST" accept-charset="utf8mb4">
+                {% csrf_token %}
+                <div class="form__discounts__list ">
+                    <label style="color:#f05454">Категория товара:</label>
+                    <select name="category" size="1">
+                        {% for cat in categories %}
+                            <option value="{{ cat.name }}">{{ cat.name }}</option>
+                        {% endfor %}
+                   </select>
+                </div>
+                <div>
+                    <button type="submit" id ="submit" value="send">Получить информацию</button>
+                </div>
+            </form>
+            <div class="main__information flex">
+
+                        {% if list %}
+                        <table class="main__information__table">
+                                    <caption>Информация по выбранной категории товара:</caption>
+                                <tr>
+                                    <th>Компания</th>
+                                    <th>Предложение</th>
+                                    <th>Категория</th>
+                                </tr>
+                            {% for offer in list %}
+                                <tr>
+                                    <td>{{ offer.company }}</td>
+                                    <td>{{ offer.offer }}</td>
+                                    <td>{{ offer.category_id }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                        {% else %}
+                            <p class="main__information__p">Для получения информации о спецпредложениях выберите категорию товара</p>
+                        {% endif %}
+            </div>
     </main>
 {% endblock %}

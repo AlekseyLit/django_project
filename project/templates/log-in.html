@@ -4,15 +4,30 @@
 {% block title %} Скидки и спецпредложения {% endblock %}
 {% block content %}
     <main>
-        <p>{{message}}</p>
-        <form name="auth" action="/account/check_user" method="post">
+            <p class="heading" > Вход на сайт</p>
+
+
+            <div class="form__login flex">
+                 <form class="form__login flex" name="auth" action="/account/check_user" method="post">
             {% csrf_token %}
-            <label for="auth-login"> Логин:</label>
-            <input type="text" id="auth-login" name="auth-login" placeholder="Введите логин" required>
-            <label for="auth-password"> Пароль:</label>
-            <input type="password" id="auth-password" name="auth-password" placeholder="Введите пароль" required>
-            <input type="submit" name="auth-button" value="Войти" >
-            <div><a href="login">Нет аккаунта?</a></div>
-        </form>
+                 <div>
+                    <label for="auth-login"> Логин:</label>
+                    <input type="text" id="auth-login" name="auth-login" placeholder="Введите логин" required>
+                </div>
+                <div>
+                    <label for="auth-password"> Пароль:</label>
+                    <input type="password" id="auth-password" name="auth-password" placeholder="Введите пароль" required>
+                </div>
+
+
+                <input class="form__login__button" type="submit" name="auth-button" value="Войти" >
+              </form>
+                  <p>{{message}}</p>
+                <div>
+                    <a href="/account/login">Нет аккаунта? Пройдите регистрацию</a>
+                </div>
+
+            </div>
+
     </main>
 {% endblock %}

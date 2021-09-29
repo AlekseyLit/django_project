@@ -1,41 +1,87 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load get_discount %}
-{% block title %} Скидки и спецпредложения {% endblock %}
+{% block title %} Скидки {% endblock %}
 {% block content %}
     <main>
-        <form id="myForm" action = "/discounts" enctype="multipart/form-data" method ="POST" accept-charset="utf8mb4">
+        <p class="heading" > Скидки</p>
+  <div class="main__categories flex ">
+
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/clothes1.jpg' %}" alt="card">
+            <p>одежда</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src="{% static 'media/auto1.jpg' %}"  alt="card">
+            <p>автомобили</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/home1.jpg' %}" alt="card">
+            <p>товары для дома</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/zoo1.jpg' %}" alt="card">
+            <p>зоотовары</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/sport1.jpg' %}" alt="card">
+            <p>спортивные товары</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/byt1.jpg' %}"  alt="card">
+            <p>бытовая техника</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/electronika1.jpg' %}" alt="card">
+            <p>электроника</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/child.jpg' %}" alt="card">
+            <p>детские товары</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/mebel1.jpg' %}" alt="card">
+            <p>мебель</p>
+        </div>
+        <div class="main__card flex">
+            <img class="main__card__foto" src ="{% static 'media/shoes1.jpg' %}" alt="card">
+            <p>обувь</p>
+        </div>
+
+    </div>
+
+        <form class="form__discounts flex" action = "/discounts" enctype="multipart/form-data" method ="POST" accept-charset="utf8mb4">
             {% csrf_token %}
-            <div class="input-line">
-                <p style="color:white">Категория</p>
+            <div class="form__discounts__list ">
+                <label style="color:#f05454">Категория товара:</label>
                 <select name="category" size="1">
                     {% for cat in categories %}
                         <option value="{{ cat.name }}">{{ cat.name }}</option>
                     {% endfor %}
                </select>
             </div>
-            <div class="input-line" style="margin-bottom:5%;">
-                <button type="submit" id ="submit" value="send">Отправить</button>
+            <div >
+                <button type="submit" id ="submit" value="send">Получить информацию</button>
             </div>
+
         </form>
-        <div class="main__row flex">
-                <div class="main__assortiment">
+
+        <div class="main__information flex">
                     {% if list %}
-                    <table>
-                        <b>
+                    <table class="main__information__table">
+                            <caption>
+                                Информация по выбранной категории товара:
+                            </caption>
                             <tr>
-                                <td colspan="7">Информация по выбранной категории товара:</td>
+                                <th>Продукт</th>
+                                <th>Категория</th>
+                                <th>Брэнд</th>
+                                <th>Модель</th>
+                                <th>Цена</th>
+                                <th>Скидка</th>
+                                <th>Компания</th>
                             </tr>
-                            <tr>
-                                <td>Продукт</td>
-                                <td>Категория</td>
-                                <td>Брэнд</td>
-                                <td>Модель</td>
-                                <td>Цена</td>
-                                <td>Скидка</td>
-                                <td>Компания</td>
-                            </tr>
-                        </b>
+
 
                             {% for discount in list %}
                                 <tr>
@@ -50,9 +96,8 @@
                             {% endfor %}
                     </table>
                     {% else %}
-                        <p>Выберите категорию товара</p>
+                        <p class="main__information__p">Для получения информации о скидках выберите категорию товара</p>
                     {% endif %}
-                </div>
         </div>
     </main>
 {% endblock %}

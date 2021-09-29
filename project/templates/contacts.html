@@ -4,32 +4,32 @@
 {% block title %} Скидки и спецпредложения {% endblock %}
 {% block content %}
     <main>
-        <div class="main__row flex">
-                <div class="main__assortiment">
-                    {% if list %}
-                    <table>
-                        <b>
-                            <tr>
-                                <td colspan="3">Информация по выбранной категории товара:</td>
-                            </tr>
-                            <tr>
-                                <td>Компания</td>
-                                <td>Предложение</td>
-                                <td>Категория</td>
-                            </tr>
-                        </b>
-                        {% for offer in list %}
-                            <tr>
-                                <td>{{ offer.company }}</td>
-                                <td>{{ offer.offer }}</td>
-                                <td>{{ offer.category_id }}</td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                    {% else %}
-                        <p>Выберите категорию товара</p>
-                    {% endif %}
-                </div>
+         <p class="heading" > Контакты</p>
+        <div class=" main__container flex">
+            <div class=" main__box" >
+                 <img src="{% static 'media/map.png' %}" alt="map">
+            </div>
+            <div class="main__box">
+                <ul>
+                    <li>125481</li>
+                    <li>Москва</li>
+                    <li>ул. Воротынская, дом 16</li>
+                    <li>+7 965 151 18 39</li>
+                    <li>+7 916 122 18 98</li>
+                    <li>procent@mail.ru</li>
+                     <li>Режим работы:</li>
+                    <li>Понедельник-воскресенье, 9.00-21.00</li>
+                </ul>
+            </div>
         </div>
+        <div class=" main__container flex">
+             <div class="main__button ">
+                <a href="/discounts">Узнать о скидках</a>
+              </div>
+            <div class="main__button ">
+                <a href="/offers">Узнать о спецпредложениях</a>
+              </div>
+        </div>
+
     </main>
 {% endblock %}

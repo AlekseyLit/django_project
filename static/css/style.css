@@ -3,14 +3,12 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    box-sizing: border-box;
 }
 body{
     font-family: 'Roboto', sans-serif;
 }
 .flex{
     display: flex;
-   
 }
 
 
@@ -53,28 +51,202 @@ body{
  .header__ul a{
     color:#30475e;
  }
-.main__row{
-    justify-content: center;
-}
- .main__banner{
-     margin-top: 50px;
-     margin-left: 50px;
+ main{
+ min-height:700px;
  }
- .main__banner__p{
+0 /*-----стили для index.html---------------------------*/
+h2{
+    margin-top:30px;
+    margin-bottom:30px;
     color:#30475e;
     font-size: 30px;
+    text-align:right;
+ }
+ .heading{
+     margin-top: 30px;
+     color:#30475e;
+     font-size: 30px;
+     text-align:center;
+}
+.main__row{
+    flex-direction:column;
+    align-items:center;
+}
+ .main__banner{
+     width: 60%;
+     margin-top: 50px;
  }
  .main__banner__img{
-     width: 50%;
+     width: 100%;
  }
- .main__assortiment{
-    width: 20%;
-    margin-top: 100px;
+ .main__p{
+     margin-top: 50px;
+     color:#30475e;
+     font-size: 24px;
  }
-.main__assortiment__ul{
-    list-style-type: none;
-    justify-content: flex-end;
+ .main__button{
+   margin-top: 30px;
+   margin-bottom:20px;
+    width:250px;
+    background-color:#5b829e;
+	padding:10px;
+	border-radius:7px;
+	border:0;
+	box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+	text-align:center;
+ }
+ .main__button a{
+    	color:white;
+
+ }
+/*..........................................................*/
+
+ /*-----стили для discounts.html---------------------------*/
+.main__categories{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 }
+.main__card{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:15%;
+    background-color:#f6f5f5;
+	box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+	border-radius:7px;
+    padding:20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.main__card__foto{
+    width:80%;
+
+}
+.main__card p{
+    color:#30475e;
+    font-size:20px ;
+}
+.form__discounts{
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.form__discounts__list label{
+    font-size:20px ;
+}
+.form__discounts__list  select{
+      font-size:16px;
+      color:#30475e;
+      width:250px;
+      height:40px;
+      background-color:white;
+      border-bottom:2px solid #30475e;
+      border-top:0;
+      border-right:0;
+      border-left:0;
+}
+.form__discounts button{
+	background-color:#f05454;
+	padding:10px;
+	border-radius:7px;
+	color:white;
+	border:0;
+	margin-left:20px;
+	box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+
+}.main__information{
+   justify-content:center;
+}
+.main__information__table{
+    color:#30475e;
+    font-size:20px ;
+    margin-top:50px;
+}
+.main__information__table caption{
+    background-color:rgba(122,122,122,0.5);
+}
+.main__information__table td,th{
+    border-bottom:1px dotted #30475e;
+    text-align:center;
+    padding:10px;
+}
+.main__information__p{
+     color:#30475e;
+}
+ /*................................................................*/
+
+  /*-----стили для offers.html  такие же как у discounts.html---*/
+
+
+  /*-----стили для contacts.html---------------------------*/
+.main__container{
+    justify-content:space-evenly;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-top:1em;
+}
+.main__box{
+    width:40%;
+    min-width:300px;
+    padding-left:5%;
+}
+.main__container img{
+    width:100%;
+}
+.main__container ul{
+    list-style-type: none;
+     color:#30475e;
+    font-size:20px ;
+}
+.form__login{
+    flex-direction:column;
+    align-items:center;
+    margin-top:50px;
+}
+.form__login div{
+    margin-bottom:2em;
+}
+.form__login label{
+    color:#30475e;
+    font-size:20px ;
+}
+#auth-login,#auth-password {
+      font-size:16px;
+      color:#30475e;
+      width:250px;
+      height:40px;
+      background-color:white;
+      border-bottom:2px solid #30475e;
+      border-top:0;
+      border-right:0;
+      border-left:0;
+}
+.form__login__button{
+    width:200px;
+    background-color:#f05454;
+	padding:10px;
+	border-radius:7px;
+	color:white;
+	border:0;
+	box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+	margin-bottom:2em;
+}
+.form__login a{
+      font-size:16px;
+      color:#30475e;
+      display:block;
+      margin-top:2em;
+}
+.form__login a:hover{
+     color:#f05454;
+}
+ /*--------------------------------------------------------*/
+
+
+   /*-----стили для log-in.html---------------------------*/
+
+ /*--------------------------------------------------------*/
 
 
  .footer{
