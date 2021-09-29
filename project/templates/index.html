@@ -1,7 +1,20 @@
+{% extends 'base.html' %}
 {% load static %}
-<head>
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-	<p>{{ message }}</p>
-</body>
+{% block title %} Скидки и спецпредложения {% endblock %}
+{% block content %}
+    <main>
+          <div class="main__row flex">
+                <p class= "heading">Всегда актуальная информация о скидках и спецпредложениях </p>
+                <div class="main__banner">
+                    <img class= "main__banner__img" src="{% static 'media/sale_vitrina.jpg' %}" alt="banner" >
+                </div>
+              <p class="main__p">Регистрируйтесь на нашем сайте и получайте дополнительные бонусы:</p>
+              <div class="main__button ">
+                <a href="/account/login">Зарегистрироваться на сайте</a>
+              </div>
+        </div>
+
+
+
+    </main>
+{% endblock %}

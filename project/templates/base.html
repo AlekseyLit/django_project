@@ -1,0 +1,49 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+</head>
+<body style="background-image:url({% static 'media/fon.jpg' %});">
+    <header class="header ">
+        <div class="header__wrap flex ">
+            <div class="header_logo">
+                <img src="{% static 'media/img1.jpg' %}" alt="logo" width="120">
+            </div>
+            <div class="header__heading">
+                <p>интернет-магазин скидок и спецпредложений</p>
+                <h1 class="header__h1">Процент</h1>
+            </div>
+            <div class="header__phones">
+               <a href="contacts.html"><p>+7 965 151 18 39</p></a>
+               <a href="contacts.html"><p>+7 916 122 18 98</p></a>
+            </div>
+        </div>
+
+        <nav class="header__nav">
+            <ul class="header__ul flex">
+                 <li class="header__li"><a href="/">Главная</a></li>
+                 <li class="header__li"><a href="/discounts">Скидки</a></li>
+                 <li class="header__li"><a href="/offers">Спецпредложения</a> </li>
+                <li class="header__li"><a href="/contacts">Контакты</a></li>
+                <li class="header__li"><a href="/account/login"> Вход/Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="footer flex">
+        <p> Литюк Алексей, группа 201-322</p>
+        <p>Мосполитех, 2021</p>
+    </footer>
+
+</body>
+</html>

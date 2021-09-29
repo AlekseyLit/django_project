@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load get_discount %}
+{% block title %} Скидки и спецпредложения {% endblock %}
+{% block content %}
+    <main>
+         <p class="heading" > Контакты</p>
+        <div class=" main__container flex">
+            <div class=" main__box" >
+                 <img src="{% static 'media/map.png' %}" alt="map">
+            </div>
+            <div class="main__box">
+                <ul>
+                    <li>125481</li>
+                    <li>Москва</li>
+                    <li>ул. Воротынская, дом 16</li>
+                    <li>+7 965 151 18 39</li>
+                    <li>+7 916 122 18 98</li>
+                    <li>procent@mail.ru</li>
+                     <li>Режим работы:</li>
+                    <li>Понедельник-воскресенье, 9.00-21.00</li>
+                </ul>
+            </div>
+        </div>
+        <div class=" main__container flex">
+             <div class="main__button ">
+                <a href="/discounts">Узнать о скидках</a>
+              </div>
+            <div class="main__button ">
+                <a href="/offers">Узнать о спецпредложениях</a>
+              </div>
+        </div>
+
+    </main>
+{% endblock %}
