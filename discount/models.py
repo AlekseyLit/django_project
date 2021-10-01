@@ -4,6 +4,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class Companies(models.Model):
+    name = models.TextField('Имя')
+    partner = models.TextField('Партнер')
+
+    def __str__(self):
+        return self.name + " " + self.partner
+
+    class Meta:
+        verbose_name = 'Компания'
+        verbose_name_plural = 'Компании'
+
+
 class Categories(models.Model):
     name = models.TextField('Описание')
 
@@ -22,7 +34,7 @@ class Discounts(models.Model):
     model = models.CharField('Модель', max_length=150)
     price = models.DecimalField('Цена', decimal_places=0, max_digits=20)
     discount = models.FloatField('Скидка')
-    company = models.CharField('Компания', max_length=150)
+    company_id = models.ForeignKey(Companies, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.product + " " + self.brand + " " + self.model + " " + f"{self.price}" + " " + f"{self.discount}"
@@ -33,7 +45,7 @@ class Discounts(models.Model):
 
 
 class Offers(models.Model):
-    company = models.CharField('Компания', max_length=150)
+    company_id = models.ForeignKey(Companies, on_delete=models.CASCADE, null=True)
     category_id = models.ForeignKey(Categories, on_delete=models.CASCADE)
     offer = models.TextField('Предложение')
 
