@@ -38,7 +38,7 @@ class Offers(models.Model):
     offer = models.TextField('Предложение')
 
     def __str__(self):
-        return self.company + " " + self.offer
+        return self.company + "  " + self.offer
 
     class Meta:
         verbose_name = 'Предложение'
@@ -52,7 +52,7 @@ class Orders(models.Model):
     deliveryDate = models.DateTimeField('Время доставки', default=datetime.datetime.now())
 
     def __str__(self):
-        return f"{self.price}" + " " + f"{self.orderDate}" + f"{self.deliveryDate}"
+        return f"{self.price}" + "   " + f"{self.orderDate}" + "  " +f"{self.deliveryDate}"
 
     class Meta:
         verbose_name = 'Заказ'
